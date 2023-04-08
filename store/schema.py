@@ -59,10 +59,51 @@ class CreateOwnerMutation(graphene.Mutation):
         owner.save()
 
         return CreateOwnerMutation(owner=owner)
+    
+
+class UpdateOwnerMutation(graphene.Mutation):
+
+    class Arguments:
+        id = graphene.ID()
+        first_name = graphene.String(required=True)
+        last_name = graphene.String(required=True)
+        location = graphene.String(required=True)
+
+    owner = graphene.Field(OwnerType)
+
+    @classmethod
+    def mutate(cls, root, info, first_name, last_name, location, id):
+        owner = Owner.objects.get(pk=id)
+        owner.first_name = first_name
+        owner.last_name = last_name
+        owner.location = location
+        owner.save()
+
+        return UpdateOwnerMutation(owner=owner)
+    
+
+
+class DeleteOwnerMutation(graphene.Mutation):
+
+    class Arguments:
+        id = graphene.ID()
+    
+    owner = graphene.Field(OwnerType)
+
+    @classmethod
+    def mutate(cls, root, info, id):
+        owner = Owner.objects.get(pk=id)
+        owner.delete()
+
+        return
 
 
 class Mutation(graphene.ObjectType):
     create_owner = CreateOwnerMutation.Field()
+    update_owner = UpdateOwnerMutation.Field()
+    delete_owner = DeleteOwnerMutation.Field()
+
+    
 
 
 
