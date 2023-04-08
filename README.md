@@ -7,7 +7,8 @@
 
 `List Product with specific ID`
 
-```query{
+```
+query{
   allProduct(id:3){
     id
     title
@@ -19,12 +20,14 @@
       firstName
     }
   }
-}```
+}
+```
 
 
 `Query all Products from the database`
 
-```query {
+```
+query {
   allProducts{
     id
     title
@@ -39,7 +42,8 @@
       title
     }
   }
-}```
+}
+```
 
 
 ## Query owner / user data from the DB
@@ -47,12 +51,14 @@
 
 `Query specific owner using the ID`
 
-```query{
+```
+query{
   allOwner(id:1){
     id
     lastName
   }
-}```
+}
+```
 
 
 
@@ -61,13 +67,15 @@
 
 `Create Owner / User`
 
-```mutation{
+```
+mutation{
   createOwner(firstName: "Joe", lastName: "Jesus", location: "Benghazi"){
     owner{
       id
     }
   }
-}```
+}
+```
 
 
 
