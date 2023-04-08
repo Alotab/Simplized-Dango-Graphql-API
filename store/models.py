@@ -26,7 +26,6 @@ class Owner(models.Model):
 class Product(models.Model):
     title = models.CharField(max_length=150)
     owner = models.ForeignKey(Owner, on_delete=models.CASCADE, related_name='product')
-    pages = models.IntegerField()
     price = models.IntegerField()
     quantity = models.IntegerField()
     description = models.TextField()
