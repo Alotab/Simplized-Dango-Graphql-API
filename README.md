@@ -81,7 +81,8 @@ mutation{
 
 `Update Owner / User using their ID, first_name, last_name and location`
 
-```mutation{
+```
+mutation{
 	updateOwner(id: 4, firstName: "Bismark", lastName: "Jaylon",location: "Benghazilization"){
     owner{
       id
@@ -90,16 +91,19 @@ mutation{
       location
     }
   }
-}```
+}
+```
 
 
 
 `Delete Owner / User using only their ID`
 
-```mutation{
+```
+mutation{
   deleteOwner(id:4){
     owner{
       firstName
     }
   }
-}```
+}
+```
