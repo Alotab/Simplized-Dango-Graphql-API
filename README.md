@@ -5,9 +5,8 @@
 ## Query the Product data  from the DB
 
 
-- List Product with specific ID
-
-`query{
+`List Product with specific ID`
+```query{
   allProduct(id:3){
     id
     title
@@ -19,11 +18,11 @@
       firstName
     }
   }
-}`
+}```
 
-- Query all Products from the database
 
-`query {
+`Query all Products from the database`
+```query {
   allProducts{
     id
     title
@@ -38,42 +37,40 @@
       title
     }
   }
-}`
+}```
 
 
 ## Query owner / user data from the DB
 
 
-- Query specific owner using the ID
-
-`query{
+`Query specific owner using the ID`
+```query{
   allOwner(id:1){
     id
     lastName
   }
-}`
+}```
 
 
 
 
-## GraphQL CRUD operations
+## GraphQL CRUD Operations
 
+`Create Owner / User`
 
-- Create Owner / User
-
-`mutation{
+```mutation{
   createOwner(firstName: "Joe", lastName: "Jesus", location: "Benghazi"){
     owner{
       id
     }
   }
-}`
+}```
 
 
 
-- Update Owner / User using their ID, first_name, last_name and location
+`Update Owner / User using their ID, first_name, last_name and location`
 
-`mutation{
+```mutation{
 	updateOwner(id: 4, firstName: "Bismark", lastName: "Jaylon",location: "Benghazilization"){
     owner{
       id
@@ -82,16 +79,16 @@
       location
     }
   }
-}`
+}```
 
 
 
-- Delete Owner / User using only their ID
+`Delete Owner / User using only their ID`
 
-`mutation{
+```mutation{
   deleteOwner(id:4){
     owner{
       firstName
     }
   }
-}`
+}```
